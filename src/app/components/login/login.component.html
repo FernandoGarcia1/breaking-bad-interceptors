@@ -1,0 +1,15 @@
+<div class="center">
+    <div class="card" style="height: 30rem; width: 25rem;">
+        <h2 class="card-title" style="text-align: center; margin-top:1rem;">LOGIN</h2>
+        <form [formGroup]="loginGroup" (ngSubmit)="login()" class="form-group" style="padding: 1rem;">
+            <label>Username: </label>
+            <input formControlName="username" class="form-control">
+            <br>
+            <label>Password: </label>
+            <input type="password" formControlName="password" class="form-control">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
+        </form>
+    </div>
+</div>
+

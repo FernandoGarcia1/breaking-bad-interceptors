@@ -1,0 +1,14 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    .card-size{
+        width: 20rem; height: 43rem; margin:1rem;
+    }
+}
+
+.center{
+    display: inline-block;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}

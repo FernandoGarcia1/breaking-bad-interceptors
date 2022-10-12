@@ -1,0 +1,33 @@
+<div class="container">
+
+    <input type="text" class="form-control" [formControl]="searchCharacter"
+        placeholder="Search your favorite character of Breaking Bad Universe" style="margin-top:20px;" />
+
+    <div *ngIf="character$ | async as characters" class="box">
+        <ng-container *ngFor="let character of characters">
+
+            <div>
+                <div class="card p-2 card-size">
+                    <img [src]="character.img" alt="Image no available " class="card-image-top"
+                        style="min-height:22rem; max-height:22rem">
+                    <h2 style="text-align:center;">{{character.name}} - "{{character.nickname}}"</h2>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Occupation : {{character.occupation}}</li>
+                        <li class="list-group-item" *ngIf="character.appearance.length>0"> Breaking Bad Season's:
+                            {{character.appearance}}</li>
+                        <li class="list-group-item" *ngIf="character.better_call_saul_appearance.length>0">Better
+                            Call Saul Season's:
+                            {{character.better_call_saul_appearance}}</li>
+                    </ul>
+
+                </div>
+            </div>
+        </ng-container>
+
+        <h2 style="color: white" *ngIf="characters.length===0">
+            Lo siento no hay coincidencias para tu busqueda, por favor intenta con otro nombre.
+        </h2>
+    </div>
+
+</div>
